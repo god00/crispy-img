@@ -18,18 +18,18 @@ interface CommandLineArgs {
 }
 
 const parseCommandLineArgs = (): CommandLineArgs => {
-  if (process.argv.length < 3 || process.argv.length > 14) {
+  if (process.argv.length < 3 || process.argv.length > 15) {
     console.error('Usage: node imageProcessor.js <inputImagePath> [outputImagePath] [options]');
     process.exit(1);
   }
-
+  console.log(process.argv)
   const inputImagePath = process.argv[2];
-  let outputImagePath = process.argv[3] || 'output_image.jpg';
+  let outputImagePath = 'output_image.jpg';
   outputImagePath = path.resolve(process.cwd(), outputImagePath);
 
   const options: ImageOptions = {};
 
-  for (let i = 4; i < process.argv.length; i += 2) {
+  for (let i = 3; i < process.argv.length; i += 2) {
     const option = process.argv[i].toLowerCase();
 
     switch (option) {
@@ -43,15 +43,16 @@ const parseCommandLineArgs = (): CommandLineArgs => {
         break;
       case '--crop':
       case '-c':
-        options.crop = process.argv[i + 1] as sharp.Position;
+        options.crop = JSON.parse(process.argv[i + 1]) as sharp.Position;
         break;
       case '--format':
       case '-f':
-        options.format = process.argv[i + 1] as sharp.OutputFormatInfo;
+        options.format = JSON.parse(process.argv[i + 1]) as sharp.OutputFormatInfo;
         break;
       case '--grayscale':
       case '-g':
         options.grayscale = true;
+        i -= 1;
         break;
       case '--blur':
       case '-b':
@@ -79,7 +80,7 @@ const processImage = async (inputPath: string, outputPath: string, options: Imag
     }
 
     if (options.crop) {
-      pipeline = pipeline.crop(options.crop);
+      pipeline = pipeline.extract(options.crop);
     }
 
     if (options.grayscale) {

@@ -4,19 +4,20 @@
     "description": "An image processing application using sharp and TypeScript",
     "main": "index.js",
     "scripts": {
-      "start": "ts-node imageProcessor.ts"
+        "start": "npx ts-node --esm src/imageProcessor.ts"
     },
     "dependencies": {
-      "sharp": "^0.29.1"
+        "sharp": "^0.29.3"
     },
     "devDependencies": {
-      "ts-node": "^10.0.0",
-      "typescript": "^4.4.4"
+        "@types/node": "^20.8.5",
+        "ts-node": "^10.9.1",
+        "typescript": "^4.9.5"
     },
+    "type": "module",
     "types": "types.d.ts",
     "engines": {
-      "node": ">=14"
+        "node": ">=14"
     },
     "license": "MIT"
-  }
-  
+}
