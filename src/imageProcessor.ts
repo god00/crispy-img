@@ -18,7 +18,7 @@ interface CommandLineArgs {
 }
 
 const parseCommandLineArgs = (): CommandLineArgs => {
-  if (process.argv.length < 4 || process.argv.length > 16) {
+  if (process.argv.length < 4 || process.argv.length > 18) {
     console.error('Usage: node imageProcessor.js <inputImagePath> [outputImagePath] [options]');
     process.exit(1);
   }
