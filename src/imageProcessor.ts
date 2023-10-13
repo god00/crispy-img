@@ -18,11 +18,10 @@ interface CommandLineArgs {
 }
 
 const parseCommandLineArgs = (): CommandLineArgs => {
-  if (process.argv.length < 3 || process.argv.length > 15) {
+  if (process.argv.length < 4 || process.argv.length > 16) {
     console.error('Usage: node imageProcessor.js <inputImagePath> [outputImagePath] [options]');
     process.exit(1);
   }
-  console.log(process.argv)
   const inputImagePath = process.argv[2];
   let outputImagePath = 'output_image.jpg';
   outputImagePath = path.resolve(process.cwd(), outputImagePath);
