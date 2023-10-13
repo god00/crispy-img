@@ -29,7 +29,7 @@ const parseCommandLineArgs = (): CommandLineArgs => {
   const options: ImageOptions = {};
 
   const outputArgIndex = process.argv.findIndex((arg) => arg === '-o' || arg === '--out')
-  if (outputArgIndex) {
+  if (outputArgIndex !== -1) {
     outputImagePath = process.argv[outputArgIndex + 1]
     process.argv.splice(outputArgIndex, 2)
   }
