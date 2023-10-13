@@ -28,6 +28,12 @@ const parseCommandLineArgs = (): CommandLineArgs => {
 
   const options: ImageOptions = {};
 
+  const outputArgIndex = process.argv.findIndex((arg) => arg === '-o' || arg === '--out')
+  if (outputArgIndex) {
+    outputImagePath = process.argv[outputArgIndex + 1]
+    process.argv.splice(outputArgIndex, 2)
+  }
+
   for (let i = 3; i < process.argv.length; i += 2) {
     const option = process.argv[i].toLowerCase();
 
