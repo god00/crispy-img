@@ -48,5 +48,5 @@ npm start -- input.jpg -w 300 -h 200 -g
 npm start -- input.jpg --crop '{"left": 10, "top": 10, "width": 300, "height": 200}' -b 5 -o output.jpg
 
 # Crop and set width and format to png
-npm start -- input.jpeg --crop {"left": 10, "top": 10, "width": 300, "height": 200} -w 500 -f {"id": "png", "quality": 85} -o t.png
+npm start -- input.jpeg --crop '{"left": 10, "top": 10, "width": 300, "height": 200}' -w 500 -f '{"id": "png", "quality": 85}' -o t.png
 ```
