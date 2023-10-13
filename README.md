@@ -29,14 +29,14 @@ npm start -- <inputImagePath> [outputImagePath] [options]
 
 ## Option
 
---width, -w: Set the width of the output image.
---height, -h: Set the height of the output image.
---crop, -c: Set the cropping region (JSON string).
---format, -f: Set the output image format (JSON string).
---grayscale, -g: Convert the image to grayscale.
---blur, -b: Apply blur to the image.
---sharpen, -s: Apply sharpening to the image.
---out, -o: Set the output path for the processed image.
+- --width, -w: Set the width of the output image.
+- --height, -h: Set the height of the output image.
+- --crop, -c: Set the cropping region (JSON string).
+- --format, -f: Set the output image format (JSON string).
+- --grayscale, -g: Convert the image to grayscale.
+- --blur, -b: Apply blur to the image.
+- --sharpen, -s: Apply sharpening to the image.
+- --out, -o: Set the output path for the processed image.
 
 ## Examples
 
