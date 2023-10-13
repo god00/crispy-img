@@ -1,0 +1,17 @@
+# Node.js
+node_modules/
+
+# Output of the TypeScript compiler
+dist/
+
+# TypeScript
+*.tsbuildinfo
+
+# Visual Studio Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
